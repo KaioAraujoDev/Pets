@@ -1,0 +1,38 @@
+{
+    "cidades":{
+        "Rio Branco":{
+            "Abrigo da tia lu":{
+                "animais":{
+                    "01":"Cães",
+                    "02":"Gatos"
+                },
+                "contato":{
+                    "instagram":"@abrigodatialu",
+                    "email":"xxxxxxxx@gmail.com",
+                    "telefone":"(XX)00000-0000"
+                },
+                "estado":"AC",
+                "estado_extenso":"Acre",
+                "descricao":"“Foi criado o abrigo com o intuito de ajudar todos os animais em situação de abandono, nosso abrigo fica em uma chácara, canis para os cães dormirem, a alimentação e limpeza são com a ajuda de doações e voluntários. Fazemos campanhas de doação, adoção e rifas.”",
+                "img":"../public/imgs/abrigos/img-1.png"
+            }
+        },
+        "Brasiléia":{
+            "Morada canina":{
+                "animais":{
+                    "01":"Cães",
+                    "02":"Gatos"
+                },
+                "contato":{
+                    "instagram":"@moradacanina",
+                    "email":"xxxxxxxx@gmail.com",
+                    "telefone":"(XX)00000-0000"
+                },
+                "estado":"ES",
+                "estado_extenso":"Espírito Santo",
+                "descricao":"““Estamos a 8 anos resgatando e dando uma vida nova a animais abandonados, acreditamos que cada bixinho merece receber amor e carinho. O local do nosso abrigo é na casa da nossa fundadora, onde ficam situados mais de 50 canis e um espaço para gatos, do qual temos 60.”",
+                "img":"../public/imgs/abrigos/img-2.png"
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+header{
+    padding: 2rem 3rem;
+    margin-bottom: 2rem;
+
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        position: relative;
+        li{
+            width: 5rem;    
+        }
+        .others-links{
+            display: flex;
+            align-items: center;
+            width: 10rem;
+            position: absolute;
+            right: 5rem;
+
+            li:last-child{
+                margin-left: 5rem;
+            }
+        }
+    }
+    
+}
