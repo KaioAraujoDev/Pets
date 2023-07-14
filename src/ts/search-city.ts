@@ -1,7 +1,5 @@
-//POO Version
 export class CitySearch{
     private inputCity: HTMLInputElement;
-    private inputEstado: HTMLInputElement;
     private valorDigitado: string; 
     private estadoSelecionado: string;
     private dataCities: any;
@@ -12,7 +10,6 @@ export class CitySearch{
 
     constructor(){
         this.inputCity = document.querySelector('#input-cidade') as HTMLInputElement;
-        this.inputEstado = document.querySelector('#input-estado') as HTMLInputElement;
         this.formSearchCity = document.querySelector('#form-search-city') as Element;
         this.divCidades = document.querySelector("#div-cidades") as Element;
         this.valorDigitado = '';
@@ -38,18 +35,32 @@ export class CitySearch{
             this.valorDigitado = (event.target as HTMLInputElement).value;
             this.findCity(this.valorDigitado, this.estadoSelecionado);
         })
-        this.inputEstado.addEventListener("change", (event)=>{
-            this.estadoSelecionado = (event.target as HTMLInputElement).value;
-            this.findCity(this.valorDigitado, this.estadoSelecionado);
-        })
 
-        const divSelect = document.querySelector(".div-select") as Element;
+        const divSelect = document.querySelector(".div-select") as HTMLDivElement;
         
         divSelect.addEventListener("click", ()=>{
             const listItens = document.querySelector("#ul-list-states") as Element;
-        
-            listItens.setAttribute('data-active', 'true');
             
+            listItens.getAttribute('data-active') === 'false' ? 
+                listItens.setAttribute('data-active', 'true') : 
+                listItens.setAttribute('data-active', 'false');
+        })
+
+        const items = document.querySelectorAll('#ul-list-states li');
+
+        items.forEach(element => {
+            element.addEventListener('click', (event) =>{
+
+                const element = event.target as HTMLLIElement; 
+                const value = element.getAttribute('value') as string;
+
+                const outputItem = document.querySelector('#output-selected-item') as HTMLParagraphElement;
+                
+                outputItem.textContent = value;
+                this.estadoSelecionado = value;
+                 
+                this.findCity(this.valorDigitado, this.estadoSelecionado);
+            })  
         })
 
         this.formSearchCity.addEventListener('submit',(event)=>{

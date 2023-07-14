@@ -69,31 +69,28 @@
             border: 1px solid #000;
             height: 3.85rem;
             background: #FFF;
-            color: #000;
+            color: rgba(#000,0.55);
             font-family: Fredoka;
             font-size: 40px;
             font-style: normal;
             font-weight: 300;
             line-height: normal;
             padding: 0 1.15rem;
-            display: table;
-
-            select {
-                border: none;
-                outline: none;
-                color: rgba(#000, 0.4);
-            }
-
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            
             .list-itens[data-active="true"]{
                 display: block;
                 position: absolute;
                 top: 8.7rem;
                 left: 0;
                 list-style: none;
-                width: 100%;
+                width: 18.95rem;
                 background: #C1C1C1;
                 overflow: scroll;
                 height: calc(4rem * 5);
+                
                 li{
                     color: #000;
                     font-family: Fredoka;
@@ -107,6 +104,7 @@
                     align-items: center;
                     padding-left: 1.1rem;
                     border: 1px solid #000;
+                    cursor: pointer;
                 }
                 li:hover{
                     background-color: #FFF;
@@ -116,18 +114,11 @@
             .list-itens[data-active="false"]{
                 display: none;
             }
-        }
-        .div-select::after{
-            content: "Selecione";
-            vertical-align: middle;
-            color: rgba(#000,0.55);
+        
         }
         .div-cidade{
             width: 19rem;
             height: 3.8125rem;
-            
-            
-           
             cursor: pointer;
             display: none;
             position: absolute;
