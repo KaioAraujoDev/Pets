@@ -147,14 +147,15 @@ export class CitySearch{
     }
     private showInfosSheltersFinded(shelters:any, city:string){
         const sectionResult = document.querySelector('#result') as Element;
+        sectionResult.innerHTML = '';
         const listAnimals = document.createElement('ul');
         listAnimals.classList.add('animals')
 
         
         
         function searchAnimals(shelter:any){
-            const animals = [];
-
+            let animals = [];
+            listAnimals.innerHTML = '';
             for(let number in shelter.animais){
                 animals.push(shelter.animais[number]);
             }
@@ -168,7 +169,7 @@ export class CitySearch{
             })
 
             return listAnimals.outerHTML;
-            
+           
         }
 
         function searchSocialNetwork(shelter:any){
@@ -201,38 +202,47 @@ export class CitySearch{
                 divSocial.appendChild(itemSocial);
 
             }
-            
-            handleNetwork(shelter.contato.instagram , "instagram")
-            handleNetwork(shelter.contato.email, "email")
+
             handleNetwork(shelter.contato.telefone, "telefone")
+            handleNetwork(shelter.contato.email, "email")
+            handleNetwork(shelter.contato.instagram , "instagram")
+            
+            
 
             return divSocial.outerHTML;
         }
-
-        for(let shelter in shelters){
-            sectionResult.innerHTML = `
+        function createItem(shelter:string, shelters:any){
+            sectionResult.innerHTML += `
                 <div class="item-main">
                     <div class="img">
                         <img class="img-main" src="${shelters[shelter].img}">
-                        <div class="more-info">
+                        <a class="more-info" href="./citie-details.html" >
                             <img src="../public/imgs/arrow.svg"/>
-                            <a href="./citie-details.html">Saiba mais</a>
-                        </div>
+                            <p>Saiba mais</p>
+                        </a>
                     </div>
                     <div class="main-infos">
-                        <p>${shelter}</p>
+                        <div class="div-title-shelter">
+                            <p class="title">${shelter}</p>
+                        </div>
+                        
                         
                         ${searchAnimals(shelters[shelter])}
 
                         ${searchSocialNetwork(shelters[shelter])}
 
                         <div>
-                            <p>${shelters[shelter].estado_extenso} - ${city}</p>
+                            <p class="add-info">${shelters[shelter].estado_extenso} - ${city}</p>
                         </div>
                     </div>
                 </div>
             `;
+        }
+        for(let shelter in shelters){
+            console.log(shelters,shelter);
             
+            createItem(shelter, shelters);
+
         }
         
     }

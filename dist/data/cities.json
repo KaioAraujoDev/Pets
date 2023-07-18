@@ -32,7 +32,40 @@
                 "estado_extenso":"Espírito Santo",
                 "descricao":"““Estamos a 8 anos resgatando e dando uma vida nova a animais abandonados, acreditamos que cada bixinho merece receber amor e carinho. O local do nosso abrigo é na casa da nossa fundadora, onde ficam situados mais de 50 canis e um espaço para gatos, do qual temos 60.”",
                 "img":"../public/imgs/abrigos/img-2.png"
+            },
+           
+            "Casa de animais":{
+                "animais":{
+                    "01":"Cães",
+                    "02":"Gatos"
+                },
+                "contato":{
+                    "instagram":"@moradacanina",
+                    "email":"xxxxxxxx@gmail.com",
+                    "telefone":"(XX)00000-0000"
+                },
+                "estado":"ES",
+                "estado_extenso":"Espírito Santo",
+                "descricao":"““Estamos a 8 anos resgatando e dando uma vida nova a animais abandonados, acreditamos que cada bixinho merece receber amor e carinho. O local do nosso abrigo é na casa da nossa fundadora, onde ficam situados mais de 50 canis e um espaço para gatos, do qual temos 60.”",
+                "img":"../public/imgs/abrigos/img-3.png"
+            },
+            "Bicharada":{
+                "animais":{
+                    "01":"Cães",
+                    "02":"Gatos"
+                },
+                "contato":{
+                    "instagram":"@moradacanina",
+                    "email":"xxxxxxxx@gmail.com",
+                    "telefone":"(XX)00000-0000"
+                },
+                "estado":"ES",
+                "estado_extenso":"Espírito Santo",
+                "descricao":"““Estamos a 8 anos resgatando e dando uma vida nova a animais abandonados, acreditamos que cada bixinho merece receber amor e carinho. O local do nosso abrigo é na casa da nossa fundadora, onde ficam situados mais de 50 canis e um espaço para gatos, do qual temos 60.”",
+                "img":"../public/imgs/abrigos/img-4.png"
             }
+            
         }
+        
     }
 }
