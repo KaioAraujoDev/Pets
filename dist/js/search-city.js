@@ -22,4 +22,4 @@ var __awaiter=this&&this.__awaiter||function(t,d,o,r){return new(o=o||Promise)(f
                         </div>
                     </div>
                 </div>
-            `}for(var n in s.classList.add("animals"),t)console.log(t),e(n,t)}}const citySearch=new CitySearch;export{CitySearch};
+            `}if(s.classList.add("animals"),Object.keys(t).length<=4)for(var n in t)e(n,t)}}const citySearch=new CitySearch;export{CitySearch};

@@ -238,12 +238,18 @@ export class CitySearch{
                 </div>
             `;
         }
-        for(let shelter in shelters){
-            console.log(shelters,shelter);
-            
-            createItem(shelter, shelters);
 
+        const numberShelters = Object.keys(shelters).length;
+        
+        if(numberShelters <= 4 ){
+            for(let shelter in shelters){
+                createItem(shelter, shelters);
+            }
+        }else{
+            
         }
+
+       
         
     }
 }   
