@@ -211,42 +211,51 @@ export class CitySearch{
 
             return divSocial.outerHTML;
         }
-        function createItem(shelter:string, shelters:any){
-            sectionResult.innerHTML += `
-                <div class="item-main">
-                    <div class="img">
-                        <img class="img-main" src="${shelters[shelter].img}">
-                        <a class="more-info" href="./citie-details.html" >
-                            <img src="../public/imgs/arrow.svg"/>
-                            <p>Saiba mais</p>
-                        </a>
-                    </div>
-                    <div class="main-infos">
-                        <div class="div-title-shelter">
-                            <p class="title">${shelter}</p>
+        function createItem(shelter:string, shelters:any , divideItems:boolean , c?:Number){
+            
+            if(divideItems){
+                
+            }
+            sectionResult.insertAdjacentHTML('beforeend', (
+                `<div class="item-main">
+                        <div class="img">
+                            <img class="img-main" src="${shelters[shelter].img}">
+                            <a class="more-info" href="./citie-details.html" >
+                                <img src="../public/imgs/arrow.svg"/>
+                                <p>Saiba mais</p>
+                            </a>
                         </div>
-                        
-                        
-                        ${searchAnimals(shelters[shelter])}
+                        <div class="main-infos">
+                            <div class="div-title-shelter">
+                                <p class="title">${shelter}</p>
+                            </div>
 
-                        ${searchSocialNetwork(shelters[shelter])}
+                            ${searchAnimals(shelters[shelter])}
 
-                        <div>
-                            <p class="add-info">${shelters[shelter].estado_extenso} - ${city}</p>
+                            ${searchSocialNetwork(shelters[shelter])}
+
+                            <div>
+                                <p class="add-info">${shelters[shelter].estado_extenso} - ${city}</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            `;
+                    </div>`
+            ));
+            
         }
 
         const numberShelters = Object.keys(shelters).length;
         
         if(numberShelters <= 4 ){
             for(let shelter in shelters){
-                createItem(shelter, shelters);
+                createItem(shelter, shelters , false);
             }
         }else{
-            
+            for(let shelter in shelters){
+                let c = 1;
+                createItem(shelter, shelters , true, c);
+
+                c++;
+            }
         }
 
        
