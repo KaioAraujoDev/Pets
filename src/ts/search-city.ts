@@ -6,7 +6,6 @@ export class CitySearch{
     private divCidades: any;
     private citiesFinded: string[];
     private formSearchCity: Element;
-    private infosShelterFinded: any;
 
     constructor(){
         this.inputCity = document.querySelector('#input-cidade') as HTMLInputElement;
@@ -211,11 +210,22 @@ export class CitySearch{
 
             return divSocial.outerHTML;
         }
-        function createItem(shelter:string, shelters:any , divideItems:boolean , c?:Number){
+
+        function createItem(shelter:string, shelters:any , divideItems:boolean){
             
             if(divideItems){
+
+                const sheltersLocal:Array<Object> = shelters;
                 
+                
+                let sheltersShowDiv:Array<Object>; 
+                console.log(Object.keys(sheltersLocal).length);
+                
+                let divGroupItems = document.createElement('div');
+                
+
             }
+            
             sectionResult.insertAdjacentHTML('beforeend', (
                 `<div class="item-main">
                         <div class="img">
@@ -251,10 +261,7 @@ export class CitySearch{
             }
         }else{
             for(let shelter in shelters){
-                let c = 1;
-                createItem(shelter, shelters , true, c);
-
-                c++;
+                createItem(shelter, shelters , true);
             }
         }
 
