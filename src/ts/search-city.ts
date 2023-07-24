@@ -138,7 +138,6 @@ export class CitySearch{
             return this.inputCity.value.toLowerCase() === citie.toLowerCase()
         }) as string
 
-        
        const shelters = this.dataCities.cidades[citieFinder];
 
        this.showInfosSheltersFinded(shelters , citieFinder)
@@ -149,8 +148,6 @@ export class CitySearch{
         sectionResult.innerHTML = '';
         const listAnimals = document.createElement('ul');
         listAnimals.classList.add('animals')
-
-        
         
         function searchAnimals(shelter:any){
             let animals = [];
@@ -211,20 +208,7 @@ export class CitySearch{
             return divSocial.outerHTML;
         }
 
-        function createItem(shelter:string, shelters:any , divideItems:boolean){
-            
-            if(divideItems){
-
-                const sheltersLocal:Array<Object> = shelters;
-                
-                
-                let sheltersShowDiv:Array<Object>; 
-                console.log(Object.keys(sheltersLocal).length);
-                
-                let divGroupItems = document.createElement('div');
-                
-
-            }
+        function createItem(shelter:string, shelters:any ){
             
             sectionResult.insertAdjacentHTML('beforeend', (
                 `<div class="item-main">
@@ -257,15 +241,54 @@ export class CitySearch{
         
         if(numberShelters <= 4 ){
             for(let shelter in shelters){
-                createItem(shelter, shelters , false);
+                createItem(shelter, shelters);
             }
         }else{
-            for(let shelter in shelters){
-                createItem(shelter, shelters , true);
-            }
-        }
+            let sheltersLocal:Array<string> = Object.keys(shelters);            
+         
+            while(sheltersLocal.length >= 1){
+                let sheltersLocalDivide:Array<string> = sheltersLocal.slice(0,4);
+                sheltersLocal.splice(0,4)
+                
+                const divAgroupShelters:HTMLDivElement = document.createElement('div');
+                divAgroupShelters.classList.add('div-group');
 
-       
+                sectionResult.insertAdjacentElement('beforeend',divAgroupShelters);
+
+                sheltersLocalDivide.forEach(shelter =>{
+                   
+
+                    divAgroupShelters.insertAdjacentHTML('beforeend',
+                        `
+                        <div class="item-main">
+                            <div class="img">
+                                <img class="img-main" src="${shelters[shelter].img}">
+                                <a class="more-info" href="./citie-details.html" >
+                                    <img src="../public/imgs/arrow.svg"/>
+                                    <p>Saiba mais</p>
+                                </a>
+                            </div>
+                            <div class="main-infos">
+                                <div class="div-title-shelter">
+                                    <p class="title">${shelter}</p>
+                                </div>
+
+                                ${searchAnimals(shelters[shelter])}
+
+                                ${searchSocialNetwork(shelters[shelter])}
+
+                                <div>
+                                    <p class="add-info">${shelters[shelter].estado_extenso} - ${city}</p>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    )
+                });
+                
+            }     
+                
+        }
         
     }
 }   
