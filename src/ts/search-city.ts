@@ -238,20 +238,24 @@ export class CitySearch{
         }
 
         const numberShelters = Object.keys(shelters).length;
-        
+
         if(numberShelters <= 4 ){
             for(let shelter in shelters){
                 createItem(shelter, shelters);
             }
         }else{
+
             let sheltersLocal:Array<string> = Object.keys(shelters);            
          
+            let countAgroup = 1;
+
             while(sheltersLocal.length >= 1){
                 let sheltersLocalDivide:Array<string> = sheltersLocal.slice(0,4);
                 sheltersLocal.splice(0,4)
                 
                 const divAgroupShelters:HTMLDivElement = document.createElement('div');
                 divAgroupShelters.classList.add('div-group');
+                divAgroupShelters.dataset.count = countAgroup.toString();
 
                 sectionResult.insertAdjacentElement('beforeend',divAgroupShelters);
 
@@ -286,8 +290,29 @@ export class CitySearch{
                     )
                 });
                 
+                countAgroup ++;
             }     
-                
+            
+            function createButtons(){
+
+                function counterAgroups(){
+                    const divButtons:HTMLDivElement = document.createElement('div');
+                    divButtons.classList.add('buttons-switch');
+                    
+                    for(let c = 1; c < countAgroup; c++ ){
+                        const Button:HTMLButtonElement = document.createElement('button');
+                        Button.textContent = c.toString();
+
+                        divButtons.insertAdjacentElement('beforeend',Button);
+                    }
+                    
+                    sectionResult.insertAdjacentElement('beforeend', divButtons)
+                }
+
+                counterAgroups()
+            }
+
+            createButtons();
         }
         
     }
