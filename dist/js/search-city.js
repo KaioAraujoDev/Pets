@@ -19,7 +19,7 @@ var __awaiter=this&&this.__awaiter||function(t,d,o,r){return new(o=o||Promise)(f
                                 <p class="add-info">${e[o].estado_extenso} - ${a}</p>
                             </div>
                         </div>
-                    </div>`);else{var r=Object.keys(i);let e=1;for(;1<=r.length;){var c=r.slice(0,4);r.splice(0,4);const u=document.createElement("div");u.classList.add("div-group"),u.dataset.count=e.toString(),t.insertAdjacentElement("beforeend",u),c.forEach(t=>{u.insertAdjacentHTML("beforeend",`
+                    </div>`);else{var r=Object.keys(i);let e=1;for(;1<=r.length;){var c=r.slice(0,4);r.splice(0,4);const h=document.createElement("div");h.classList.add("div-group"),h.dataset.count=e.toString(),t.insertAdjacentElement("beforeend",h),c.forEach(t=>{h.insertAdjacentHTML("beforeend",`
                         <div class="item-main">
                             <div class="img">
                                 <img class="img-main" src="${i[t].img}">
@@ -42,4 +42,4 @@ var __awaiter=this&&this.__awaiter||function(t,d,o,r){return new(o=o||Promise)(f
                                 </div>
                             </div>
                         </div>
-                        `)}),e++}var l=document.createElement("div");l.classList.add("buttons-switch");for(let t=1;t<e;t++){var h=document.createElement("button");h.textContent=t.toString(),l.insertAdjacentElement("beforeend",h)}t.insertAdjacentElement("beforeend",l)}}}const citySearch=new CitySearch;export{CitySearch};
+                        `)}),e++}var l=document.createElement("div");l.classList.add("buttons-switch");for(let t=1;t<e;t++){var u=document.createElement("button");u.textContent=t.toString(),1===t?u.dataset.active="true":u.dataset.active="false",l.insertAdjacentElement("beforeend",u)}t.insertAdjacentElement("beforeend",l),document.querySelectorAll('button[data-active="false"]').forEach(t=>{t=t.textContent;(t=document.querySelectorAll(`.div-group[data-count="${t}"]`)).forEach(t=>{t.style.display="none"})})}}}const citySearch=new CitySearch;export{CitySearch};

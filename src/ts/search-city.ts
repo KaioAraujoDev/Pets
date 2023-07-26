@@ -295,24 +295,54 @@ export class CitySearch{
             
             function createButtons(){
 
-                function counterAgroups(){
+
+                function counterButtons(){
                     const divButtons:HTMLDivElement = document.createElement('div');
                     divButtons.classList.add('buttons-switch');
                     
                     for(let c = 1; c < countAgroup; c++ ){
                         const Button:HTMLButtonElement = document.createElement('button');
                         Button.textContent = c.toString();
-
+            
+                        if(c === 1 ){
+                            Button.dataset.active = "true";
+                        }else{
+                            Button.dataset.active = "false";
+                        }
+                        
                         divButtons.insertAdjacentElement('beforeend',Button);
                     }
                     
-                    sectionResult.insertAdjacentElement('beforeend', divButtons)
+                    sectionResult.insertAdjacentElement('beforeend', divButtons);
+
+                    // const buttons:NodeListOf<HTMLElement> = document.querySelectorAll('div.buttons-switch button');
+
+                    // buttons.forEach((button)=>{
+                    //     button.addEventListener 
+                    // })
                 }
 
-                counterAgroups()
-            }
+                counterButtons();
 
+                
+            }
+            function verifyButtons(){
+                const buttonsFalse = document.querySelectorAll('button[data-active="false"]');
+                
+                buttonsFalse.forEach((element:any)=>{
+                    hideGroup(element.textContent)
+                })
+               
+            }
+            function hideGroup(value:string){
+                const groupsHide:NodeListOf<HTMLElement> = document.querySelectorAll(`.div-group[data-count="${value}"]`);
+
+                groupsHide.forEach((group) =>{
+                    group.style.display = "none";
+                })
+            }
             createButtons();
+            verifyButtons();
         }
         
     }
