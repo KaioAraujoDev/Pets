@@ -303,23 +303,29 @@ export class CitySearch{
                     for(let c = 1; c < countAgroup; c++ ){
                         const Button:HTMLButtonElement = document.createElement('button');
                         Button.textContent = c.toString();
-            
+                        Button.dataset.type = "button-switch";
+
                         if(c === 1 ){
                             Button.dataset.active = "true";
                         }else{
                             Button.dataset.active = "false";
                         }
                         
+                    
+                        Button.addEventListener('click',(event)=>{
+                            const buttonLocal = (event.target as HTMLButtonElement);
+                            buttonLocal.dataset.active = "true";
+
+                            const buttonsInactives = document.querySelectorAll('[data-type="button-switch"]');
+
+                            
+                        })
                         divButtons.insertAdjacentElement('beforeend',Button);
                     }
                     
                     sectionResult.insertAdjacentElement('beforeend', divButtons);
 
-                    // const buttons:NodeListOf<HTMLElement> = document.querySelectorAll('div.buttons-switch button');
-
-                    // buttons.forEach((button)=>{
-                    //     button.addEventListener 
-                    // })
+          
                 }
 
                 counterButtons();
