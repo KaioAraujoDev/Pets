@@ -313,11 +313,19 @@ export class CitySearch{
                         
                     
                         Button.addEventListener('click',(event)=>{
-                            const buttonLocal = (event.target as HTMLButtonElement);
-                            buttonLocal.dataset.active = "true";
 
                             const buttonsInactives = document.querySelectorAll('[data-type="button-switch"]');
 
+                            buttonsInactives.forEach((item)=>{
+                                const button = item as HTMLButtonElement;
+                                let buttonDatasetActive = button.dataset.active;
+
+                                buttonDatasetActive == "true" ? button.setAttribute('data-active',"false"): false;
+                                                
+                            })
+
+                            const buttonLocal = (event.target as HTMLButtonElement);
+                            buttonLocal.dataset.active == "true" ? false : buttonLocal.dataset.active = "true";
                             
                         })
                         divButtons.insertAdjacentElement('beforeend',Button);
