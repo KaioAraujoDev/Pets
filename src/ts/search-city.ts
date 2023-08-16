@@ -295,7 +295,6 @@ export class CitySearch{
             
             function createButtons(){
 
-
                 function counterButtons(){
                     const divButtons:HTMLDivElement = document.createElement('div');
                     divButtons.classList.add('buttons-switch');
@@ -314,18 +313,32 @@ export class CitySearch{
                     
                         Button.addEventListener('click',(event)=>{
 
-                            const buttonsInactives = document.querySelectorAll('[data-type="button-switch"]');
+                            const resetButtons = () =>{
+                                const buttonsInactives = document.querySelectorAll('[data-type="button-switch"]');
 
-                            buttonsInactives.forEach((item)=>{
-                                const button = item as HTMLButtonElement;
-                                let buttonDatasetActive = button.dataset.active;
+                                buttonsInactives.forEach((item)=>{
+                                    const button = item as HTMLButtonElement;
+                                    let buttonDatasetActive = button.dataset.active;
 
-                                buttonDatasetActive == "true" ? button.setAttribute('data-active',"false"): false;
-                                                
-                            })
+                                    buttonDatasetActive == "true" ? button.setAttribute('data-active',"false"): false;
+                                                    
+                                })
+                            }
+                            
+                            const activeButtonClick = ()=>{
+                                const buttonLocal = (event.target as HTMLButtonElement);
+                                buttonLocal.dataset.active == "true" ? false : buttonLocal.dataset.active = "true";
+                            }
 
-                            const buttonLocal = (event.target as HTMLButtonElement);
-                            buttonLocal.dataset.active == "true" ? false : buttonLocal.dataset.active = "true";
+                            const handleGroupShelters = () =>{
+
+                            }
+
+                            resetButtons();
+                            activeButtonClick();
+                            handleGroupShelters();
+
+
                             
                         })
                         divButtons.insertAdjacentElement('beforeend',Button);
