@@ -330,13 +330,19 @@ export class CitySearch{
                                 buttonLocal.dataset.active == "true" ? false : buttonLocal.dataset.active = "true";
                             }
 
-                            const handleGroupShelters = () =>{
+                            const handleGroupShelters = (value:string) =>{
+                                
+                                const divGroupActive:HTMLDivElement = document.querySelector(`div.div-group[data-count="${value}"]`) as HTMLDivElement;
 
+                                divGroupActive.style.display = 'block';
+                                
+                                verifyButtons();
+                                
                             }
 
                             resetButtons();
                             activeButtonClick();
-                            handleGroupShelters();
+                            handleGroupShelters((event.target as HTMLButtonElement).innerText);
 
 
                             
