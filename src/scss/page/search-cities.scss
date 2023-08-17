@@ -156,6 +156,7 @@ section#result{
     align-items: center;
     flex-direction: column;
     padding: 0 3.19rem;
+    margin-bottom: 10rem;
     .item-main{
         max-width: 57rem;
         display: grid;
@@ -265,4 +266,52 @@ section#result{
         }
     }
     
+    .buttons-switch{
+
+        button{
+            width: 6.8rem;
+            height: 6.8rem;
+            background-color: #611485;
+            border: none;
+            font-family: Fredoka;
+            font-size: 3.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            border-radius: 50%;
+            text-align: center;
+            color: #FFF;
+            cursor: pointer;
+        }
+        button:not(button:last-child){
+            margin-right: 2.7rem;
+        }
+
+        button[data-active="false"]{
+            opacity: .5;
+        }
+    }
+}
+
+footer{
+    margin-top: 10rem;
+    text-align: center;
+
+    p.description{
+        font: normal 600 36px 'Fredoka',sans-serif;
+        color: #000000;
+        margin-bottom: 5rem;
+    }
+    nav{
+        ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+            li{
+                list-style: none;
+                width: 7rem;
+            }
+        }
+    }
 }
