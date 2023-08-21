@@ -181,16 +181,16 @@ export class CitySearch{
 
                 if(type === "instagram" && network !== undefined){
                     linkSocial.href = `https://www.instagram.com/${network}`;
-                    imgSocial.src = "../public/imgs/instagram.svg";
+                    imgSocial.src = "/public/imgs/instagram.svg";
 
                 }else if(type === "email" && network !== undefined){
                     linkSocial.href = `mailto:${network}`;
-                    imgSocial.src = "../public/imgs/Email.svg";
+                    imgSocial.src = "/public/imgs/Email.svg";
 
 
                 }else if(type === "telefone" && network !== undefined){
                     linkSocial.href = `tel:${network}`;
-                    imgSocial.src = "../public/imgs/telefone.svg";
+                    imgSocial.src = "/public/imgs/telefone.svg";
                 }
 
                 linkSocial.appendChild(imgSocial);
@@ -214,7 +214,7 @@ export class CitySearch{
                 `<div class="item-main">
                         <div class="img">
                             <img class="img-main" src="${shelters[shelter].img}">
-                            <a class="more-info" href="./citie-details.html" >
+                            <a class="more-info" href="javascript:void(0)" type="link-more-info-shelter" data-cities=${JSON.stringify(shelters[shelter])}>
                                 <img src="../public/imgs/arrow.svg"/>
                                 <p>Saiba mais</p>
                             </a>
@@ -237,6 +237,42 @@ export class CitySearch{
             
         }
 
+        const convertEntityHTML = (value:string) =>{
+
+            const entitiesMap:Record<string,string> = {
+                "&":"&amp;",
+                "<":"&lt;",
+                ">":"&gt;",
+                '"':"&quot;",
+                "'":"&#39;",
+                "“":"&#8220;",
+                "”":"&#8221;",
+                ' ':"&nbsp;"
+            };
+
+            return value.replace(/[&<>"'“” ]/g, function(match){
+                return entitiesMap[match];
+            })
+
+        }
+
+        const unconverterEntityHTML = (value:string) =>{
+
+            const entitiesMap: Record<string, string> = {
+                "&amp;": "&",
+                "&lt;": "<",
+                "&gt;": ">",
+                "&quot;": '"',
+                "&#39;": "'",
+                "&#8220;": "“",
+                "&#8221;": "”",
+                "&nbsp;": " "
+            };
+        
+            return value.replace(/&(amp|lt|gt|quot|#39|#8220|#8221|nbsp);/g, (match) => entitiesMap[match]);
+        }
+
+    
         const numberShelters = Object.keys(shelters).length;
 
         if(numberShelters <= 4 ){
@@ -258,16 +294,14 @@ export class CitySearch{
                 divAgroupShelters.dataset.count = countAgroup.toString();
 
                 sectionResult.insertAdjacentElement('beforeend',divAgroupShelters);
-
+                
                 sheltersLocalDivide.forEach(shelter =>{
-                   
-
                     divAgroupShelters.insertAdjacentHTML('beforeend',
                         `
                         <div class="item-main">
                             <div class="img">
                                 <img class="img-main" src="${shelters[shelter].img}">
-                                <a class="more-info" href="./citie-details.html" >
+                                <a class="more-info" href="javascript:void(0)" type="link-more-info-shelter" data-cities=${convertEntityHTML(JSON.stringify(shelters[shelter]))}>
                                     <img src="../public/imgs/arrow.svg"/>
                                     <p>Saiba mais</p>
                                 </a>
@@ -288,10 +322,11 @@ export class CitySearch{
                         </div>
                         `
                     )
+
                 });
-                
+
                 countAgroup ++;
-            }     
+            }
             
             function createButtons(){
 
@@ -377,7 +412,47 @@ export class CitySearch{
             createButtons();
             verifyButtons();
         }
-        
+
+
+        const handleAnchorMoreInfosShelter = () =>{
+            const anchors:NodeListOf<HTMLAnchorElement> = document.querySelectorAll('[type="link-more-info-shelter"]');
+            
+            const showMoreInfosShelter = (anchor:MouseEvent) => {
+                const getShelterInfo = () =>{
+                    const anchorTarget: HTMLAnchorElement | null = anchor.currentTarget instanceof HTMLAnchorElement 
+                    ? anchor.currentTarget 
+                    : null;
+
+                    const anchorString:string = anchorTarget?.dataset.cities ?? '';
+                    
+                    return anchorString;
+
+                }
+                const saveInfoShelter = (json:string) =>{
+                    localStorage.setItem('shelter',json);
+                }
+                const redirectPage = () =>{
+                    window.location.href = 'citie-details.html';
+                }
+                
+                saveInfoShelter(getShelterInfo());
+                redirectPage();
+
+            }
+
+            anchors.forEach(anchor =>{
+
+                anchor.addEventListener('click', (event:MouseEvent)=>{
+                    
+                    showMoreInfosShelter(event);
+                })
+            }) 
+            
+        }   
+
+        handleAnchorMoreInfosShelter();
     }
-}   
+} 
+
+
 const citySearch = new CitySearch();
