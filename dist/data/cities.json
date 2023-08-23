@@ -14,7 +14,7 @@
                 "estado":"AC",
                 "estado_extenso":"Acre",
                 "descricao":"“Foi criado o abrigo com o intuito de ajudar todos os animais em situação de abandono, nosso abrigo fica em uma chácara, canis para os cães dormirem, a alimentação e limpeza são com a ajuda de doações e voluntários. Fazemos campanhas de doação, adoção e rifas.”",
-                "img":"../public/imgs/abrigos/img-1.png"
+                "img":"/public/imgs/abrigos/img-1.png"
             }
         },
         "Brasiléia":{
@@ -31,7 +31,7 @@
                 "estado":"ES",
                 "estado_extenso":"Espírito Santo",
                 "descricao":"““Estamos a 8 anos resgatando e dando uma vida nova a animais abandonados, acreditamos que cada bixinho merece receber amor e carinho. O local do nosso abrigo é na casa da nossa fundadora, onde ficam situados mais de 50 canis e um espaço para gatos, do qual temos 60.”",
-                "img":"../public/imgs/abrigos/img-2.png"
+                "img":"/public/imgs/abrigos/img-2.png"
             },
            
             "Casa de animais":{
@@ -47,7 +47,7 @@
                 "estado":"ES",
                 "estado_extenso":"Espírito Santo",
                 "descricao":"““Estamos a 8 anos resgatando e dando uma vida nova a animais abandonados, acreditamos que cada bixinho merece receber amor e carinho. O local do nosso abrigo é na casa da nossa fundadora, onde ficam situados mais de 50 canis e um espaço para gatos, do qual temos 60.”",
-                "img":"../public/imgs/abrigos/img-3.png"
+                "img":"/public/imgs/abrigos/img-3.png"
             },
             "Bicharada":{
                 "animais":{
@@ -62,7 +62,7 @@
                 "estado":"ES",
                 "estado_extenso":"Espírito Santo",
                 "descricao":"““Estamos a 8 anos resgatando e dando uma vida nova a animais abandonados, acreditamos que cada bixinho merece receber amor e carinho. O local do nosso abrigo é na casa da nossa fundadora, onde ficam situados mais de 50 canis e um espaço para gatos, do qual temos 60.”",
-                "img":"../public/imgs/abrigos/img-4.png"
+                "img":"/public/imgs/abrigos/img-4.png"
             },
             "Bichoes":{
                 "animais":{
@@ -77,7 +77,7 @@
                 "estado":"ES",
                 "estado_extenso":"Espírito Santo",
                 "descricao":"““Estamos a 8 anos resgatando e dando uma vida nova a animais abandonados, acreditamos que cada bixinho merece receber amor e carinho. O local do nosso abrigo é na casa da nossa fundadora, onde ficam situados mais de 50 canis e um espaço para gatos, do qual temos 60.”",
-                "img":"../public/imgs/abrigos/img-5.png"
+                "img":"/public/imgs/abrigos/img-5.png"
             },
             "Cães de guarda":{
                 "animais":{
@@ -92,7 +92,7 @@
                 "estado":"ES",
                 "estado_extenso":"Espírito Santo",
                 "descricao":"““Estamos a 8 anos resgatando e dando uma vida nova a animais abandonados, acreditamos que cada bixinho merece receber amor e carinho. O local do nosso abrigo é na casa da nossa fundadora, onde ficam situados mais de 50 canis e um espaço para gatos, do qual temos 60.”",
-                "img":"../public/imgs/abrigos/img-6.png"
+                "img":"/public/imgs/abrigos/img-6.png"
             }
             
         }
