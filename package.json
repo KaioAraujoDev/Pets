@@ -4,7 +4,8 @@
     "typescript": "^5.0.4"
   },
   "scripts": {
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "build": "node /dist/index.html"
   },
   "devDependencies": {
     "browser-sync": "^2.29.1",
