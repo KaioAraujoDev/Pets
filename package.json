@@ -5,7 +5,7 @@
   },
   "scripts": {
     "gulp": "gulp",
-    "build": "node /dist/index.html"
+    "build": "node ./dist/index.html"
   },
   "devDependencies": {
     "browser-sync": "^2.29.1",
