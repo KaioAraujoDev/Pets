@@ -54,6 +54,83 @@
         }
     }
 }
+section#result-infos-shelter{
+    .div-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2.3rem;
+        img{
+            max-width: 40rem;
+        }
+    }
+    h2{
+        color: #000;
+        font-family: Fredoka;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 3.74px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 1.25rem;
+    }
+    h3{
+        color: #000;
+        font-family: Fredoka;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        text-align: center;
+        opacity: .5;
+        margin-bottom: 3.2rem;
+    }
+    h3 + p{
+        color: #000;
+        font-family: Fredoka;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        letter-spacing: 3.74px;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 53rem;
+        word-wrap: break-word;
+        text-align: start;
+        margin-bottom: 7rem;
+    }
+    .div-contacts{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .div-contact{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 31rem;
+            margin-bottom: 3rem;
+            img{
+                width: 5rem;
+                height: 5rem;
+                object-fit: cover;
+                margin-right: 2.15rem;
+            }
+            p{
+                color: #000;
+                font-family: Fredoka;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 3.4px;
+            }
+        }
+    }
+}
 footer{
     margin-top: 10rem;
     text-align: center;

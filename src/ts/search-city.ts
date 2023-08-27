@@ -255,23 +255,6 @@ export class CitySearch{
             })
 
         }
-
-        const unconverterEntityHTML = (value:string) =>{
-
-            const entitiesMap: Record<string, string> = {
-                "&amp;": "&",
-                "&lt;": "<",
-                "&gt;": ">",
-                "&quot;": '"',
-                "&#39;": "'",
-                "&#8220;": "“",
-                "&#8221;": "”",
-                "&nbsp;": " "
-            };
-        
-            return value.replace(/&(amp|lt|gt|quot|#39|#8220|#8221|nbsp);/g, (match) => entitiesMap[match]);
-        }
-
     
         const numberShelters = Object.keys(shelters).length;
 
