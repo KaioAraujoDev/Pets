@@ -181,16 +181,16 @@ export class CitySearch{
 
                 if(type === "instagram" && network !== undefined){
                     linkSocial.href = `https://www.instagram.com/${network}`;
-                    imgSocial.src = "/public/imgs/instagram.svg";
+                    imgSocial.src = "/assets/imgs/instagram.svg";
 
                 }else if(type === "email" && network !== undefined){
                     linkSocial.href = `mailto:${network}`;
-                    imgSocial.src = "/public/imgs/Email.svg";
+                    imgSocial.src = "/assets/imgs/Email.svg";
 
 
                 }else if(type === "telefone" && network !== undefined){
                     linkSocial.href = `tel:${network}`;
-                    imgSocial.src = "/public/imgs/telefone.svg";
+                    imgSocial.src = "/assets/imgs/telefone.svg";
                 }
 
                 linkSocial.appendChild(imgSocial);
@@ -215,7 +215,7 @@ export class CitySearch{
                         <div class="img">
                             <img class="img-main" src="${shelters[shelter].img}">
                             <a class="more-info" href="javascript:void(0)" type="link-more-info-shelter" data-cities=${JSON.stringify(shelters[shelter])}>
-                                <img src="../public/imgs/arrow.svg"/>
+                                <img src="../assets/imgs/arrow.svg"/>
                                 <p>Saiba mais</p>
                             </a>
                         </div>
@@ -285,7 +285,7 @@ export class CitySearch{
                             <div class="img">
                                 <img class="img-main" src="${shelters[shelter].img}">
                                 <a class="more-info" href="javascript:void(0)" type="link-more-info-shelter" data-cities=${convertEntityHTML(JSON.stringify(shelters[shelter]))}>
-                                    <img src="../public/imgs/arrow.svg"/>
+                                    <img src="../assets/imgs/arrow.svg"/>
                                     <p>Saiba mais</p>
                                 </a>
                             </div>

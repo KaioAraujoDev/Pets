@@ -102,7 +102,7 @@ class shelter{
 
             divContact.classList.add(`div-contact`);
             divContact.dataset.type = type;
-            img.src = `/public/imgs/${type}.svg`;
+            img.src = `/assets/imgs/${type}.svg`;
             info.textContent = contact;
 
             divContact.appendChild(img);
