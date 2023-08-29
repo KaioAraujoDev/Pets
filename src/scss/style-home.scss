@@ -80,33 +80,13 @@ section#donate{
         video{
             width: 45rem;
             position: relative;
-            @media (max-width:1000px){
-                &::-webkit-media-controls {
-                    display: none;
-                }
-            }
-            &::-webkit-media-controls-start-playback-button {
-              color: #ac65e4;
-            }
-            &::-webkit-media-controls-volume-slider {
-                /* Estilos para o controle de volume no Safari e navegadores baseados no WebKit */
-                width: 10rem;
-                font-size: 10rem;
-            }
-            &::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
-                /* Estilos para o botão deslizante do controle de volume no Safari e navegadores baseados no WebKit */
-                background-color: #ac65e4;
-            }
+        
         }
-       
         button#play{
             position: absolute;
             left: 50%;
             top: 50%;
             display: none;
-            @media (max-width:1000px){
-                display: block;
-            }
         }
     }
 }

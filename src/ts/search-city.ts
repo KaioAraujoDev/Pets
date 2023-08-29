@@ -214,7 +214,7 @@ export class CitySearch{
                 `<div class="item-main">
                         <div class="img">
                             <img class="img-main" src="${shelters[shelter].img}">
-                            <a class="more-info" href="javascript:void(0)" type="link-more-info-shelter" data-cities=${JSON.stringify(shelters[shelter])}>
+                            <a class="more-info" href="javascript:void(0)" type="link-more-info-shelter" data-cities=${convertEntityHTML(JSON.stringify(shelters[shelter]))}>
                                 <img src="../assets/imgs/arrow.svg"/>
                                 <p>Saiba mais</p>
                             </a>
